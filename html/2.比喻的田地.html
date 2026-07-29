@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>芥菜種的比喻</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Microsoft JhengHei", sans-serif;
+
+        /* ⭐ 背景光流動畫 */
+        background: radial-gradient(circle at 20% 30%, rgba(140, 196, 236, 0.25), transparent 60%),
+                    radial-gradient(circle at 80% 70%, rgba(255,180,0,0.25), transparent 60%),
+                    black;
+        animation: bgFlow 12s infinite alternate ease-in-out;
+    }
+
+    @keyframes bgFlow {
+        0% { background-position: 20% 30%, 80% 70%; }
+        100% { background-position: 30% 40%, 70% 60%; }
+    }
+
+    /* 背景圖片容器 */
+    .bg-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background: url('../image/2.比喻的田地.png') no-repeat center center;
+        background-size: contain;
+    }
+
+    /* 按鈕（透明） */
+    .btn {
+        position: absolute;
+        cursor: pointer;
+        background: rgba(255,255,255,0);
+        border: none;
+        width: 100px;
+        height: 30px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        box-shadow: 0 0 18px #00B0F0;
+        transform: scale(1.05);
+    }
+
+    /* ⭐ 視窗縮放＋滑入 */
+    @keyframes modalPop {
+        from { opacity: 0; transform: scale(0.85) translateX(-60px); }
+        to { opacity: 1; transform: scale(1) translateX(0); }
+    }
+
+    /* 彈出視窗背景 */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ⭐ 毛玻璃效果 */
+    .modal-content {
+        background: rgba(34, 34, 34, 0.45);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow: 0 0 25px rgba(255,255,255,0.25);
+        padding: 30px;
+        border-radius: 14px;
+        width: 60%;
+        color: white;
+        font-size: 24px;
+        line-height: 1.6;
+        animation: modalPop 0.8s ease;
+
+        /* ⭐ 新增：避免內容太多把 X 擠掉 */
+        overflow-y: auto;
+        max-height: 80vh;
+    }
+
+    .close {
+        float: right;
+        cursor: pointer;
+        font-size: 32px;
+        color: #ff6666;
+    }
+
+    /* ⭐ 經文光暈呼吸效果 */
+    .glow-text {
+        color: #3399ff;
+        font-weight: bold;
+        font-family: DFKai-SB;
+        font-size: 40px;
+        text-shadow: 0 0 12px #3399ff;
+        animation: glowPulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes glowPulse {
+        0% { text-shadow: 0 0 8px #3399ff; opacity: 0.85; }
+        50% { text-shadow: 0 0 22px #66ccff; opacity: 1; }
+        100% { text-shadow: 0 0 8px #3399ff; opacity: 0.85; }
+    }
+
+    @media (max-width: 600px) {
+        .modal-content {
+            width: 90%;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .glow-text {
+            font-size: 28px !important;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div id="mouse-pos"
+     style="position:fixed; bottom:10px; right:10px; 
+            color:white; font-size:22px; 
+            background:rgba(0,0,0,0.4); padding:8px 14px;
+            border-radius:8px; z-index:9999;">
+</div>
+
+
+<div class="bg-container">
+
+    <!-- P28. 比喻的田地 -->
+    <button class="btn" style="left: 23%; top:27%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>比喻的田地</span>',
+            '屬肉體的特性 ',
+            '對於第二個比喻的田地也一起來看一下,首先了解一下屬肉體的特性,屬肉體的田是播種的地方,又是所撒的種子長成後所結果子的地方,那麼先來看一下屬靈上的意思,比喻的田地的屬靈的含意,是在哥林多前書三章九節的話語,使徒保羅說,你們是神所耕種的田地,所建造的房屋,成爲你們的就是田地不是嗎?我們讀一下哥林多前書 3章9節',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>  
+    
+    <!-- P29. 哥林多前書 3章9節 -->
+    <button class="btn" style="left: 19%; top:47%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>田地 ≈ 你們(人) </span>',
+            '哥林多前書 3章9節 ',
+            '9 因為我們是與神同工的；你們是神所耕種的田地，所建造的房屋。',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P30. 好土 ≈ 善良的心 -->
+    <button class="btn" style="left: 40%; top:53%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>好土 ≈ 善良的心</span>',
+            '田地是什麼樣的地方呢?',
+            '哥林多前書 3章9節, 所說的這田地是什麼樣的地方呢?在路加福音八章十五節的話語來看,耶穌說在好土地的,就是持守在誠實善良的心裏,這好土地的田地就是人的心,所以比喻的田地的實體就是人的心,但是這比喻的田地的意義有兩種,即人的心田和教會,爲什麼是教會,讀一下馬太福音十三章三十八節的話語,來思考一下,田地就是世界,好種就是天國之子,稗子就是那惡者之子,耶穌把田地說成什麼,把田地說成是世界,這裏指的世界不是屬肉體的世界,因爲是耶穌的田地,所以是耶穌世界不是嗎?這世界所種植的是耶穌的種子,耶穌的話語,撥撒在這世界,耶穌的種子撒在了人的心裏,信仰人聚集的耶穌的世界就是耶穌的教會,這樣,聖經所比喻的田地是指人的心,是信耶穌的信仰人所聚集的耶穌的教會,如果,田地是教會的話,那麼去教會的目的是什麼,以及該如何信仰呢?去教會就能得到救恩?就能進入天國嗎?耶穌的教會是耶穌在2000年前撒種子的地方,也是魔鬼撒稗子的地方,兩種種子在同一個田裏生長,直到收割的時候,到了收割時,耶穌會讓天使們過來,收天國的種子,就是以真理的話語得到重生的麥子一樣的基督徒,引導到天國的倉裡得到救恩並進入天國,所以,到教會的目的,不是只要到教會就可以,而是在末時,能夠被收割到天國的倉裡的信仰人,纔可稱爲是得救了,即是進入天國的信仰人,大家能理解嗎?所以弟兄姊妹們,雖然現在你們在比喻的田裏,也就是在世上信仰,但是真心的希望你們能通過真理的引導進入天國,我們瞭解了關於比喻的田地,比喻的田地它是具備兩種含義的,是人的心和教會,我們讀一下路加福音八章十五節,馬太福音十三章三十八節',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P31. 路加福音 8章15節 -->
+    <button class="btn" style="left: 17%; top:53%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>路加福音 8章15節</span>',
+            '路加福音 8章15節',
+            '15 那落在好土裏的，就是人聽了道，持守在誠實善良的心裏，並且忍耐着結實。',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P32. 馬太福音13章38節 -->
+    <button class="btn" style="left: 17%; top:59%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>馬太福音13章38節</span>',
+            '馬太福音13章38節',
+            '38 田地就是世界；好種就是天國之子；稗子就是那惡者之子',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>    
+
+</div>
+
+<!-- ⭐ 彈出視窗 -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+
+        <!-- 標題 -->
+        <div id="modal-title"></div>
+
+        <!-- 經文（兩段逐字＋光暈） -->
+        <div id="modal-verse"></div>
+
+        <!-- 解釋文字 -->
+        <div id="modal-extra" style="margin-top:20px;"></div>
+    </div>
+</div>
+
+<script>
+
+/* ⭐ 逐字動畫 */
+function typeWriter(element, text, speed = 60) {
+    element.innerText = "";
+    let i = 0;
+    function typing() {
+        if (i < text.length) {
+            element.innerText += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
+    }
+    typing();
+}
+
+/* ⭐ 語音朗讀功能 */
+function speakText(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "zh-TW";     // 使用台灣中文語音
+    utter.rate = 1;           // 語速
+    utter.pitch = 1;          // 音調
+    speechSynthesis.cancel(); // 先停止其他語音
+    speechSynthesis.speak(utter);
+}
+
+/* ⭐ 開啟視窗（逐字＋語音） */
+function openModal(titleHtml, verseLine1, verseLine2, extraHtml) {
+
+    document.getElementById("modal-title").innerHTML = titleHtml;
+
+    const verseEl = document.getElementById("modal-verse");
+    const extraEl = document.getElementById("modal-extra");
+
+    verseEl.innerHTML = "";
+    extraEl.innerHTML = extraHtml;
+
+    document.getElementById("modal").style.display = "flex";
+
+    // ⭐ 第一段逐字
+    const line1 = document.createElement("div");
+    line1.className = "glow-text";
+    verseEl.appendChild(line1);
+    typeWriter(line1, verseLine1, 60);
+
+    // ⭐ 第二段逐字（延遲）
+    setTimeout(() => {
+        const line2 = document.createElement("div");
+        line2.className = "glow-text";
+        verseEl.appendChild(line2);
+        typeWriter(line2, verseLine2, 60);
+    }, verseLine1.length * 60 + 300);
+
+    // ⭐ 語音朗讀（把兩段經文合併）
+    speakText(verseLine1 + "。" + verseLine2);
+}
+
+/* ⭐ 關閉視窗 */
+function closeModal() {
+    speechSynthesis.cancel(); // 停止語音
+    document.getElementById("modal").style.display = "none";
+}
+
+document.addEventListener("mousemove", function(e) {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    // 計算百分比（四捨五入）
+    const xPercent = Math.round((e.clientX / w) * 100);
+    const yPercent = Math.round((e.clientY / h) * 100);
+
+    // 顯示在畫面右下角
+    const posBox = document.getElementById("mouse-pos");
+    posBox.innerText = `X: ${xPercent}%   Y: ${yPercent}%`;
+});
+
+
+</script>
+
+</body>
+</html>
