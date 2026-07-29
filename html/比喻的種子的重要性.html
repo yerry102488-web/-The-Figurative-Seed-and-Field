@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>芥菜種的比喻</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Microsoft JhengHei", sans-serif;
+
+        /* ⭐ 背景光流動畫 */
+        background: radial-gradient(circle at 20% 30%, rgba(140, 196, 236, 0.25), transparent 60%),
+                    radial-gradient(circle at 80% 70%, rgba(255,180,0,0.25), transparent 60%),
+                    black;
+        animation: bgFlow 12s infinite alternate ease-in-out;
+    }
+
+    @keyframes bgFlow {
+        0% { background-position: 20% 30%, 80% 70%; }
+        100% { background-position: 30% 40%, 70% 60%; }
+    }
+
+    /* 背景圖片容器 */
+    .bg-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background: url('../image/比喻的種子的重要性.png') no-repeat center center;
+        background-size: contain;
+    }
+
+    /* 按鈕（透明） */
+    .btn {
+        position: absolute;
+        cursor: pointer;
+        background: rgba(255,255,255,0);
+        border: none;
+        width: 100px;
+        height: 30px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        box-shadow: 0 0 18px #00B0F0;
+        transform: scale(1.05);
+    }
+
+    /* ⭐ 視窗縮放＋滑入 */
+    @keyframes modalPop {
+        from { opacity: 0; transform: scale(0.85) translateX(-60px); }
+        to { opacity: 1; transform: scale(1) translateX(0); }
+    }
+
+    /* 彈出視窗背景 */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ⭐ 毛玻璃效果 */
+    .modal-content {
+        background: rgba(34, 34, 34, 0.45);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow: 0 0 25px rgba(255,255,255,0.25);
+        padding: 30px;
+        border-radius: 14px;
+        width: 60%;
+        color: white;
+        font-size: 24px;
+        line-height: 1.6;
+        animation: modalPop 0.8s ease;
+
+        /* ⭐ 新增：避免內容太多把 X 擠掉 */
+        overflow-y: auto;
+        max-height: 80vh;
+    }
+
+    .close {
+        float: right;
+        cursor: pointer;
+        font-size: 32px;
+        color: #ff6666;
+    }
+
+    /* ⭐ 經文光暈呼吸效果 */
+    .glow-text {
+        color: #3399ff;
+        font-weight: bold;
+        font-family: DFKai-SB;
+        font-size: 40px;
+        text-shadow: 0 0 12px #3399ff;
+        animation: glowPulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes glowPulse {
+        0% { text-shadow: 0 0 8px #3399ff; opacity: 0.85; }
+        50% { text-shadow: 0 0 22px #66ccff; opacity: 1; }
+        100% { text-shadow: 0 0 8px #3399ff; opacity: 0.85; }
+    }
+
+    @media (max-width: 600px) {
+        .modal-content {
+            width: 90%;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .glow-text {
+            font-size: 28px !important;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div id="mouse-pos"
+     style="position:fixed; bottom:10px; right:10px; 
+            color:white; font-size:22px; 
+            background:rgba(0,0,0,0.4); padding:8px 14px;
+            border-radius:8px; z-index:9999;">
+</div>
+
+
+<div class="bg-container">
+
+    <!-- P18. 比喻種子的重要性 -->
+    <button class="btn" style="left: 9%; top:39.5%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>比喻種子的重要性</span>',
+            '耶利米先知預言 ',
+            '我們通過話語看一下,比喻種子的重要性,神是從現在開始,大約在2600年前,向耶利米先知預言了將會有兩種種子,撒在同一個田裏的事情,來看耶利米書31章27節,我要把人的種和生畜的種,播種在以色列家和猶大家,說了要播種在同一個田裏,同一個場所,我們讀一下耶利米書31章27節',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>  
+    
+    <!-- P19. 耶利米書 31章27節 -->
+    <button class="btn" style="left: 29%; top:40%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>耶利米先知預言</span>',
+            '耶利米書 31章27節 ',
+            '耶和華說：「日子將到，我要把人的種和牲畜的種播種在以色列家和猶大家。',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P20. 耶利米書 31章27節 什麼時候成就 -->
+    <button class="btn" style="left: 9%; top:47%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>耶利米書 31章27節 什麼時候成就</span>',
+            '耶穌初臨時成就 ',
+            '那麼這一段話什麼時候成就呢,在馬太福音13章24到25節裏說到,天國好像人撒好種在田裏,之後又說,及至人睡覺的時候有仇敵來,將稗子撒在麥子裏就走了,因此我們可以知道,在同一個田裏同一個場所,種下好種和稗子種兩種種子的話語,在耶利米預言大約600年之後耶穌初臨時成就了,我們讀一下馬太福音13章24到25節',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P21. 馬太福音 13章:24節 到 25節 -->
+    <button class="btn" style="left: 26%; top:47.5%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>馬太福音 13章:24節 到 25節</span>',
+            '好種_和_稗子種  ',
+            '耶穌又設個比喻對他們說：「天國好像人撒好種在田裏，及至人睡覺的時候，有仇敵來，將稗子撒在麥子裏就走了。',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P22. 好種和稗子種,是誰的種子呢? -->
+    <button class="btn" style="left: 9%; top:62.5%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>好種和稗子種,是誰的種子呢?</span>',
+            '撒好種的就是人子,就是耶穌  ',
+            '但是這人種的好種和獸種的稗子,是誰的種子呢?通過馬太福音13章37到39節的話語來看,那撒好種的就是人子,這位人子就是耶穌,耶穌從神那裏得到種子之後,撒了神的種子,所以耶穌和門徒一起來撒這福音的種子,所以這好種就可以說是神的種子,這稗子就是仇敵魔鬼撒的種子,所以這稗子就是魔鬼的種子,所以神的種子是神的話語,也就是真理,魔鬼的種子是魔鬼的話,也就是非真理不是嗎,那麼可以知道有這兩種種子,問題不是有兩種種子,乃是如何區分按照好種生的結果,和按照稗子生的結果,我們真的要知道這種子的比喻,對於我們的重要性,在馬太福音13章38節的話語說,好種就是天國之子,而稗子就是那惡者之子,這話語指的是以怎樣的種子生,決定了去天國還是去地獄,我們讀一下馬太福音13章37到39節',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P23. 馬太福音 13章:37節 到 39節 -->
+    <button class="btn" style="left: 26%; top:63%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>馬太福音 13章:37節 到 39節</span>',
+            '馬太福音 13章:37節 到 39節',
+            '37 他回答說：「那撒好種的就是人子；38 田地就是世界；好種就是天國之子；稗子就是那惡者之子；39 撒稗子的仇敵就是魔鬼；收割的時候就是世界的末了；收割的人就是天使。',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P24. 神的兒女,魔鬼的兒女 -->
+    <button class="btn" style="left: 9%; top:78.5%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>神的兒女,魔鬼的兒女</span>',
+            '約翰一書三章九到十節',
+            '爲了更進一步的瞭解,來讀一下約翰一書三章九到十節的話語,凡從神生的就不犯罪,因神的道存在他的心裏,他也不能犯罪,因他是由神生的,從此就顯出誰是神的兒女,誰是魔鬼的兒女,凡不行義的就不屬神,不愛弟兄的也是如此,通過所讀的話語告訴了我們,什麼樣的人是神的兒女,什麼樣的人是魔鬼的兒女,凡從神生的就不犯罪,因神的道存在他的心裏,這樣的是神的兒女,所以我們成爲神的子女,要具備去天國的信仰,並不是努力來往於教會就可以的,又或者光信耶穌就可以不是嗎?不是這樣的吧,並不是只一味地去相信,稱神爲父,神就會成爲我們的父,如果說是神的兒女,那麼在我們心中,一定要有真理也就是神的種子,那麼反之,什麼樣的人稱之爲魔鬼的子女呢,不是以神的種子而生,乃是以魔鬼的種子,即魔鬼的非真理生的,這樣的人可稱之爲魔鬼的兒女不是嗎,無論是誰,就算那一個人再怎麼熱心的去信仰,但若心中沒有神的話語,那麼他就是魔鬼之子,例如,在約翰福音8章44節裏,耶穌對每天到神面前,額頭貼着地禱告,甚至每個星期禁食兩三次的猶太人說,你們是出於你們的父魔鬼,這猶太人,並不是以肉體的魔鬼的種子生的,是因在他們裏面沒有神真理的話語,所以說,他們是魔鬼的子女,所以弟兄姊妹們,無論我們在信仰的道路上,說被得救了,是正統,得到聖靈了,但若在內心裏沒有神的話語,他就是魔鬼的種子生的子女, 我們一定要懂得這一點,所以這種子的重要原因是因爲,根據我們是以什麼樣的種子生的,就能分爲屬神天國之子,和魔鬼的惡者之子,所以弟兄姊妹們,我們要知道自己是以什麼樣的種子生的?若在我心裏沒有神的真理,只有非真理的話,就要以真理的話語重生,而成爲神的兒女,以上查看了比喻的種子的重要性,我們讀一下約翰一書三章九到十節,約翰福音8章44節',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P25. 約翰一書  3章:9節 到 10節 -->
+    <button class="btn" style="left: 26%; top:78%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>約翰一書  3章:9節 到 10節</span>',
+            '約翰一書  3章:9節 到 10節',
+            '9 凡從神生的，就不犯罪，因神的道（原文是種）存在他心裏；他也不能犯罪，因為他是由神生的。10 從此就顯出誰是神的兒女，誰是魔鬼的兒女。凡不行義的就不屬神，不愛弟兄的也是如此。',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P26. 約翰福音  8章:44節 -->
+    <button class="btn" style="left: 68.5%; top:84.5%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>約翰福音  8章:44節</span>',
+            '約翰福音  8章:44節',
+            '44 你們是出於你們的父魔鬼，你們父的私慾你們偏要行。他從起初是殺人的，不守真理，因他心裏沒有真理。他說謊是出於自己；因他本來是說謊的，也是說謊之人的父。',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+    <!-- P27. 天國奧秘 ≈ 種子 -->
+    <button class="btn" style="left: 33%; top:92%"
+        onclick="openModal(
+            '<span style=&quot;color:#E97132;font-weight:bold;font-size:54px;&quot;>天國奧秘 ≈ 種子</span>',
+            '決定了是去天國還是去地獄',
+            '如果再補充一點的話,耶穌爲什麼說這種子的比喻是重要呢?是因爲接受了什麼樣的種子,就決定了是去天國還是去地獄,所以天國的奧祕是什麼呢?就是種子,這就告訴了我們這種子對於我們的重要性,所以弟兄姊妹們,要通過這比喻的種子來回看一下自己,希望我們都能夠進入到天國,這就是我們學習的關於比喻的種子',
+            '<span style=&quot;font-size:28px;font-weight:bold;&quot;>' +
+            '<br>' +
+            '<br>' +            
+            '</span>'
+        )">
+    </button>
+
+</div>
+
+<!-- ⭐ 彈出視窗 -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+
+        <!-- 標題 -->
+        <div id="modal-title"></div>
+
+        <!-- 經文（兩段逐字＋光暈） -->
+        <div id="modal-verse"></div>
+
+        <!-- 解釋文字 -->
+        <div id="modal-extra" style="margin-top:20px;"></div>
+    </div>
+</div>
+
+<script>
+
+/* ⭐ 逐字動畫 */
+function typeWriter(element, text, speed = 60) {
+    element.innerText = "";
+    let i = 0;
+    function typing() {
+        if (i < text.length) {
+            element.innerText += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
+    }
+    typing();
+}
+
+/* ⭐ 語音朗讀功能 */
+function speakText(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "zh-TW";     // 使用台灣中文語音
+    utter.rate = 1;           // 語速
+    utter.pitch = 1;          // 音調
+    speechSynthesis.cancel(); // 先停止其他語音
+    speechSynthesis.speak(utter);
+}
+
+/* ⭐ 開啟視窗（逐字＋語音） */
+function openModal(titleHtml, verseLine1, verseLine2, extraHtml) {
+
+    document.getElementById("modal-title").innerHTML = titleHtml;
+
+    const verseEl = document.getElementById("modal-verse");
+    const extraEl = document.getElementById("modal-extra");
+
+    verseEl.innerHTML = "";
+    extraEl.innerHTML = extraHtml;
+
+    document.getElementById("modal").style.display = "flex";
+
+    // ⭐ 第一段逐字
+    const line1 = document.createElement("div");
+    line1.className = "glow-text";
+    verseEl.appendChild(line1);
+    typeWriter(line1, verseLine1, 60);
+
+    // ⭐ 第二段逐字（延遲）
+    setTimeout(() => {
+        const line2 = document.createElement("div");
+        line2.className = "glow-text";
+        verseEl.appendChild(line2);
+        typeWriter(line2, verseLine2, 60);
+    }, verseLine1.length * 60 + 300);
+
+    // ⭐ 語音朗讀（把兩段經文合併）
+    speakText(verseLine1 + "。" + verseLine2);
+}
+
+/* ⭐ 關閉視窗 */
+function closeModal() {
+    speechSynthesis.cancel(); // 停止語音
+    document.getElementById("modal").style.display = "none";
+}
+
+document.addEventListener("mousemove", function(e) {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    // 計算百分比（四捨五入）
+    const xPercent = Math.round((e.clientX / w) * 100);
+    const yPercent = Math.round((e.clientY / h) * 100);
+
+    // 顯示在畫面右下角
+    const posBox = document.getElementById("mouse-pos");
+    posBox.innerText = `X: ${xPercent}%   Y: ${yPercent}%`;
+});
+
+
+</script>
+
+</body>
+</html>
