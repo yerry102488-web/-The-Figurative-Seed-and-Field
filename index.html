@@ -8,7 +8,7 @@
     body {
         margin: 0;
         height: 100vh;
-        overflow: hidden;
+        overflow: auto;
         font-family: "Microsoft JhengHei", sans-serif;
         background: #111;
     }
@@ -27,7 +27,12 @@
         height: 100%;
         transition: transform 0.3s ease;
         z-index: 1000;
+
+        /* ⭐ 讓 sidebar 可以捲動 */
+        overflow-y: auto;
+        max-height: 100vh;
     }
+
 
     /* ⭐ 隱藏時滑入左側 */
     .sidebar.hidden {
